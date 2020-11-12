@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiplication Tables</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<p><span id="first">0</span>&nbsp;*&nbsp;<span id="second">0</span>&nbsp;=&nbsp;<span id="result">0</span></p>
+	<script type="text/javascript">
+		//////////set var, set user preferences//////////
+		var first = prompt('¿De qué número quieres obtener tu tabla?', 28),
+			second = 0,
+			result = 0,
+			t = 10;
+			topUser = prompt('¿Hasta qué número quieres que se multiplique?', 10);
+		if (topUser != 10) {
+			t = topUser;
+		}
+
+		//////////autoexecutable function//////////
+		(function(){
+			var calc = function() {
+				if (second < t) {
+					//////////calc operation result//////////
+					second = second + 1;
+					result = first * second;
+					//////////print operation result//////////
+					document.getElementById('first').innerHTML = first;
+					document.getElementById('second').innerHTML = second;
+					document.getElementById('result').innerHTML = result;
+				} else {
+					//////////wanna try again?//////////
+					var retry = confirm("¿Quieres volver a intentarlo?");
+					if (retry == true) {
+						location.reload();
+						second = 0;
+					} else {
+						window.close();
+					}
+				}
+			};
+			//////////interval to function repetition//////////
+			calc();
+			var interval = setInterval(calc, 1000);
+		}())
+	</script>
+	<!-- Structure, Styles and Code By Edward Velasco, 10-2 -->
+</body>
+</html>

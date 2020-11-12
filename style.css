@@ -1,0 +1,30 @@
+@font-face {
+	font-family: Century Gothic;
+	src: url('CenturyGothic.ttf');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+body {
+	user-select: none;
+	font-size: 8rem;
+	text-align: center;
+	font-family: Century Gothic;
+	font-weight: bold;
+}
+
+p {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
